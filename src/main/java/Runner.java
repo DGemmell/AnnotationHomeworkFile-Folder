@@ -12,11 +12,17 @@ public class Runner {
         DBHelper.save(folder2);
 
         File file = new File("Day1", "txt",2, folder);
+        DBHelper.save(file);
 
         File file2 = new File("Day2", "txt", 3, folder2);
+        DBHelper.save(file2);
 
-//        would this update file2?
-        File file2 = new File("Day2", "txt",5, folder2);
+//       would this update file2?
+        file2 = new File("Day2", "txt", 5, folder2);
+        DBHelper.save(file2);
+
+//        would this delete file2?
+        DBHelper.delete(file2);
 
     }
 }

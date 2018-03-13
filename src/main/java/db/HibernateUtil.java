@@ -1,7 +1,5 @@
 package db;
 
-
-import com.sun.tools.javac.api.DiagnosticFormatter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

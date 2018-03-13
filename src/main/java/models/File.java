@@ -1,5 +1,7 @@
 package models;
 
+import javax.persistence.*;
+
 public class File {
     private int id;
     private String name;
@@ -17,8 +19,10 @@ public class File {
         this.folder = folder;
     }
 
-    @Id
+
     @Column(name="id")
+    @GeneratedValue
+    @Id
     public int getId() {
         return id;
     }
