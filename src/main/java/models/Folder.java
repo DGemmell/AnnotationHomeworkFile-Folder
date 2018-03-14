@@ -1,7 +1,5 @@
 package models;
 
-import org.hibernate.annotations.Entity;
-
 import javax.persistence.*;
 import java.util.Set;
 
