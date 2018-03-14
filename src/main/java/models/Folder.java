@@ -3,7 +3,6 @@ package models;
 import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
-import java.io.File;
 import java.util.Set;
 
 @Entity
@@ -22,6 +21,7 @@ public class Folder {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     public int getId() {
         return id;

@@ -2,6 +2,8 @@ package models;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "files")
 public class File {
     private int id;
     private String name;
@@ -20,9 +22,9 @@ public class File {
     }
 
 
-    @Column(name="id")
-    @GeneratedValue
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     public int getId() {
         return id;
     }
