@@ -8,7 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import java.nio.file.Files;
+//import java.nio.file.Files;
 import java.util.List;
 
 public class DBHelper {
@@ -59,20 +59,20 @@ public class DBHelper {
         }
     }
 
-    public static List<Files> getFilesInFolder(Folder folder){
+    public static List<File> getFilesInFolder(Folder folder){
         session = HibernateUtil.getSessionFactory().openSession();
-        List<Files> results = null;
+        List<File> files = null;
         Criteria cr = session.createCriteria(File.class);
         cr.add(Restrictions.eq("Folder", folder));
-        results = getList(cr);
-        return results;
+        files = getList(cr);
+        return files;
     }
 
     public static <T> List<T> getList(Criteria cr) {
-        List<T> results = null;
+        List<T> files = null;
         try {
             transaction = session.beginTransaction();
-            results = cr.list();
+            files = cr.list();
             transaction.commit();
         } catch (HibernateException ex) {
             transaction.rollback();
@@ -80,7 +80,7 @@ public class DBHelper {
         } finally {
             session.close();
         }
-        return results;
+        return files;
     }
 
 
